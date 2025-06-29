@@ -6,7 +6,8 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon app.js",
+    "seed": "node -e \"require('./controllers/productController').seed({}, {json: console.log}, console.error)\""
   },
   "keywords": [],
   "author": "",

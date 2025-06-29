@@ -2,7 +2,10 @@ const Product = require('../models/Product');
 
 // Helper function to get the base URL for images
 const getImageUrl = (imagePath) => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+  // In production, use the deployed URL, otherwise use localhost
+  const baseUrl = process.env.NODE_ENV === 'production' 
+    ? process.env.RENDER_EXTERNAL_URL || process.env.BASE_URL 
+    : 'http://localhost:5000';
   return imagePath.startsWith('http') ? imagePath : `${baseUrl}${imagePath}`;
 };
 
