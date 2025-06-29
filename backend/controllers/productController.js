@@ -44,19 +44,19 @@ exports.seed = async (_req, res, next) => {
         type:'Seed Drill',
         description:'Zero-till Seed Drill, 11-row',
         price: 55_000,
-        image:'https://via.placeholder.com/350x200?text=Seed+Drill' },
+        image:getImageUrl('/static/seed_Drill.jpeg') },
 
       { machineNumberPlate:'BW-07',
         type:'Baler',
         description:'Square Hay Baler',
         price: 260_000,
-        image:'https://via.placeholder.com/350x200?text=Baler' },
+        image:getImageUrl('/static/square_hay_baler.jpeg')},
 
       { machineNumberPlate:'SP-08',
         type:'Spraying Machine',
         description:'Spraying Machine',
         price: 38_000,
-        image:'/static/spraying_machine.jpg' }
+        image:getImageUrl('/static/spraying_machine.jpg') }
     ];
 
     await Product.deleteMany({});
